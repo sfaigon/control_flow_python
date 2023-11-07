@@ -26,20 +26,16 @@
 
 # exercise-03 Calculate Dog Years
 
-# Write the code that:
-# 1. Prompts the user to enter a dog's age like this:
-#      Input a dog's age: 
-# 2. Calculates the equivalent dog years, where:
-#      - The first two years count as 10 years each
-#      - Any remaining years count as 7 years each
-# 3. Prints the answer in the following format:
-#      The dog's age in dog years is xx
 
-# Hints:
-# Use the int() function to convert the string returned from input() into an integer
-# Start with an if that checks if the age is less than 3
 
-age = int(input("Input a dog's age: "))
+# age = int(input("Input a dog's age: "))
+# sum = 0
+# for i in range(age):
+#     if i<2:
+#         sum += 10
+#     else:
+#         sum += 7
+# print(f"The dog's age in dog years is {sum}")
 
 
 
@@ -48,19 +44,19 @@ age = int(input("Input a dog's age: "))
 
 # exercise-04 What kind of Triangle?
 
-# Write the code that:
-# 1. Prompts the user to enter the three lengths of a triangle (one at a time):
-#      Enter the lengths of three side of a triangle:
-#      a: 
-#      b:
-#      c:
-# 2. Write the code that determines if the triangle is:
-#      equilateral - all three sides are equal in length
-#      scalene - all three sides are unequal in length
-#      isosceles - exactly two sides are the same length
-# 3. Print a message such as:
-#      - A triangle with sides of <a>, <b> & <c> is a <type of triangle> triangle
 
+# print(" Enter the lengths of three side of a triangle:")
+# a = int(input("a:"))
+# b = int(input("b:"))
+# c = int(input("c:"))
+
+# if a == b and b == c:
+#     triangle = "equilateral"
+# elif a == b or b == c or a == c:
+#     triangle = "isosceles"
+# else:
+#     triangle = "scalene"
+# print(f"A triangle with side {a}, {b}, and {c} is a {triangle} triangle")
 
 
 
@@ -68,22 +64,16 @@ age = int(input("Input a dog's age: "))
 
 # exercise-05 Fibonacci sequence for first 50 terms
 
-# Write the code that:
-# 1. Calculates and prints the first 50 terms of the fibonacci sequence.
-# 2. Print each term and number as follows:
-#      term: 0 / number: 0
-#      term: 1 / number: 1
-#      term: 2 / number: 1
-#      term: 3 / number: 2
-#      term: 4 / number: 3
-#      term: 5 / number: 5
-#      etc.
-
-# Hints:
-# The next number is found by adding the two numbers before it
-# Use a while loop with a looping variable, or look into Python ranges, e.g.:
-#   for n in range(50):
-
+# num = 0
+# sum = 1
+# print("Term: 0 / number: 0")
+# print("Term: 1 / number: 1")
+# for i in range(2,50):
+#     holder = sum
+#     sum = sum + num
+#     num = holder
+#     print(f"Term: {i} / number: {sum}")
+    
 
 
 
@@ -103,9 +93,35 @@ age = int(input("Input a dog's age: "))
 # 4. Print the result as follows:
 #      <Mmm> <dd> is in <season> 
 
-# Hints:
-# Consider using the in operator to check if a string is in a particular list/tuple like this:
-#   if input_month in ('Jan', 'Feb', 'Mar'):
-#
-# After setting the likely season, you can use another if...elif...else statement to "adjust" if
-# the day number falls within a certain range.
+
+
+mm = input("Enter the month of the year (Jan - Dec):").lower()
+dd = int(input("Enter the day of the month:"))
+season = None
+if mm == "dec":
+    if dd > 20:
+        season = "Winter"
+    else:
+        season = "Fall"
+elif mm in ("jan", "feb"):
+    season = "Winter"
+elif mm == "mar":
+    if dd > 19:
+        season = "Spring"
+    else:
+        season = "Winter"
+elif mm in ("apr", "may"):
+    season = "Spring"
+elif mm == "jun":
+    if dd > 20:
+        season = "Summer"
+    else:
+        season = "Spring"
+elif mm in ("jul", "aug"):
+    season = "Summer"
+elif mm == "sep":
+    if dd > 21:
+        season = "Fall"
+    else:
+        season = "Summer"
+print(f"{mm} {dd} is in {season}")
